@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogs</title>
+</head>
+<body>
+    <h1>Blog</h1>
+    {% for blog in blogs %}
+        <a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+        <p>{{ blog.date }}</p>
+        <p>{{ blog.text }}</p>
+    {% endfor %}
+
+</body>
+</html>
