@@ -5,3 +5,7 @@ class Project(models.Model):
     description = models.CharField(max_length=250)
     image = models.ImageField(upload_to='portfolio/images')
     url = models.URLField(blank=True)
+
+    #This function returns the name of the objects
+    def __str__(self):
+        return self.title

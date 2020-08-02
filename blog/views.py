@@ -5,7 +5,7 @@ from .models import Blog
 def all_blogs(request):
     # this orders the blogs by last published and limits the
     # number of blogs displayed by 5
-    blogs = Blog.objects.order_by('-date')[:5]
+    blogs = Blog.objects.order_by('-date')
     return render(request, 'blog/all_blogs.html', {'blogs': blogs})
 
 

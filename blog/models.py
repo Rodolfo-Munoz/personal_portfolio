@@ -6,4 +6,9 @@ class Blog(models.Model):
     date = models.DateField()
     text = models.TextField()
 
+    # This function returns the name of the objects
+    def __str__(self):
+        return self.title
+
+
 
