@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Portfolio</title>
-</head>
-<body>
-    <h1>Rodolfo Munoz, Django developer</h1>
+{% extends 'portfolio/base.html' %}
+{% block content %}
+
+    <h1>Rodolfo Munoz Portfolio</h1>
 
     {% load static %}
 
@@ -15,6 +11,7 @@
     <a href="{% static 'portfolio/cv.pdf' %}">Check my CV</a>
     <br>
     <a href="{% url 'blog:all_blogs' %}">Blog page</a>
+
     {% for project in projects %}
 
         <h2>{{ project.title }}</h2>
@@ -22,11 +19,10 @@
         <p><img width="500px" src="{{ project.image.url }}"></p>
 
         {# If Project has an url then display this link #}
-        {% if project.url %}
-        <a target="_blank" href="{{ project.url }}">Link to web site</a>
+        {% if project.url %}<a target="_blank" href="{{ project.url }}">Link to web site</a>
         {% endif %}
 
     {% endfor %}
+{% endblock %}
 
-</body>
-</html>
+
